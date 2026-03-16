@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Event Handling</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // Mouse Events
+        $("#btn1").click(function(){
+            alert("Button Clicked");
+        });
+        $("#btn1").dblclick(function(){
+            alert("Button Double Clicked");
+        });
+        $("#box").mouseenter(function(){
+            $(this).css("background","yellow");
+        });
+        $("#box").mouseleave(function(){
+            $(this).css("background","lightblue");
+        });
+        $("#box").mousedown(function(){
+            $(this).css("background","white");
+        });
+        $("#box").mouseup(function(){
+            $(this).text("Mouse Up");
+        });
+        $("#box").hover(function(){
+            $(this).css("border","3px solid red");
+        });
+
+        // Keyboard Events
+        $("#text1").keypress(function(){
+            $("#msg").text("Key Pressed");
+        });
+        $("#text1").keydown(function(){
+            $("#msg").text("Key Down");
+        });
+        $("#text1").keyup(function(){
+            $("#msg").text("Key Up");
+        });
+
+        // Form Events
+        $("#text1").focus(function(){
+            $(this).css("background","lightgreen");
+        });
+        $("#text1").blur(function(){
+            $(this).css("background","white");
+        });
+        $("#text1").change(function(){
+            alert("Value Changed");
+        });
+        $("#form1").submit(function(){
+            alert("Form Submitted");
+        });
+
+        // General Event Method
+        $("#btn2").on("click",function(){
+            alert("Event attached using ON");
+        });
+        $("#btn3").click(function(){
+            $("#btn2").off("click");
+                alert("Click event removed from button2");
+        });
+
+});
+</script>
+</head>
+<body>
+    <h2>Mouse Events</h2>
+    <button id="btn1">Click / Double Click Me</button>
+    <div id="box" style="width:200px;height:100px;background:lightblue;margin-top:10px;">
+            Mouse Area
+    </div>
+    <h2>Keyboard Events</h2>
+    <input type="text" id="text1" placeholder="Type something">
+    <p id="msg"></p>
+    <h2>Form Events</h2>
+    <form id="form1">
+        <input type="text" placeholder="Enter Name">
+        <input type="submit" value="Submit">
+    </form>
+    <h2>General Event Methods</h2>
+    <button id="btn2">ON Event Button</button>
+    <button id="btn3">OFF Event Button</button>
+
+</body>
+</html>

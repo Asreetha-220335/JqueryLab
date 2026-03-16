@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM Traversing</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+    .box{
+    border:1px solid black;
+    padding:10px;
+    margin:10px;
+    }
+    .highlight{
+    background:gray;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+    // Parent
+    $("#parentBtn").click(function(){
+        $("#child").parent().addClass("highlight");
+    });
+    $("#b2").click(function(){
+        $("#child").parents().addClass("highlight");
+    });
+    $("#b3").click(function(){
+        $("#child").parentsUntil("body").addClass("highlight");
+    });
+
+    // Children
+    $("#childBtn").click(function(){
+    $("#parent").children().addClass("highlight");
+    });
+
+    // Find
+    $("#findBtn").click(function(){
+    $("#parent").find("p").addClass("highlight");
+    });
+
+    // Siblings
+    $("#sibBtn").click(function(){
+    $("#child").siblings().addClass("highlight");
+    });
+
+    // Next
+    $("#nextBtn").click(function(){
+    $("#child").next().addClass("highlight");
+    });
+
+    // Nextall
+    $("#nextallBtn").click(function(){
+        $("#child").next().addClass("highlight");
+    });
+
+
+    // Previous
+    $("#prevBtn").click(function(){
+        $("#child").prev().addClass("highlight");
+    });
+
+    // prevall
+    $("#prevallBtn").click(function(){
+        $("#child").prev().addClass("highlight");
+    });
+
+    // Filtering
+    $("#firstBtn").click(function(){
+    $("p").first().addClass("highlight");
+    });
+
+    $("#lastBtn").click(function(){
+    $("p").last().addClass("highlight");
+    });
+
+    $("#eqBtn").click(function(){
+    $("p").eq(1).addClass("highlight");
+    });
+
+});
+</script>
+</head>
+<body>
+    <h2>DOM Traversing Demo</h2>
+    <div id="parent" class="box">
+        <p>Paragraph 1</p>
+        <p id="child">Paragraph 2</p>
+        <p>Paragraph 3</p>
+        <p>Paragraph 4</p>
+        </div>
+    <h3>Buttons</h3>
+    <h1>Parent Traversal </h1>
+    <button id="parentBtn">parent()</button>
+    <button id="b2">parents()</button>
+    <button id="b3">parentsUntil()</button>
+    <h1>Children Traversal </h1>
+    <button id="childBtn">children()</button>
+    <button id="findBtn">find()</button>
+    <h3>Sibling Traversal</h3>
+    <button id="sibBtn">siblings()</button>
+    <button id="nextBtn">next()</button>
+    <button id="nextallBtn">nextAll()</button>
+    <button id="prevBtn">prev()</button>
+    <button id="prevallBtn">prevAll()</button>
+    <h1>Filtering Methods </h1>
+    <button id="firstBtn">first()</button>
+    <button id="lastBtn">last()</button>
+    <button id="eqBtn">eq()</button>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arrow Animation Control</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+    #arrow{
+    width:50px;
+    position:relative;
+    margin:20px;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+    // Start a sequence of animations
+        $("#start").click(function(){
+        $("#arrow")
+        .animate({left:'200px'},1000)
+        .animate({top:'100px'},1000)
+        .animate({left:'0px'},1000)
+        .animate({top:'0px'},1000);
+    });
+    // Stop current animation
+    $("#stop").click(function(){
+        $("#arrow").stop();
+    });
+    // Finish all animations immediately
+    $("#finish").click(function(){
+        $("#arrow").finish();
+    });
+    // Delay next animation
+    $("#delay").click(function(){
+        $("#arrow").delay(1000).animate({left:'150px'},1000);
+    });
+    // Add a custom function to queue
+    $("#queue").click(function(){
+        $("#arrow").queue(function(next){
+        $(this).css("transform","rotate(180deg)");
+        next(); // important to continue the queue
+        });
+    });
+    // Run next item in queue
+    $("#dequeue").click(function(){
+        $("#arrow").dequeue();
+    });
+    // Clear all remaining animations in queue
+    $("#clear").click(function(){
+        $("#arrow").clearQueue();
+    });
+
+});
+</script>
+</head>
+<body>
+    <h2>Arrow Animation Control Demo</h2>
+    <img id="arrow" src="arrow.png" alt="arrow"><br><br>
+    <button id="start">Start Animation</button>
+    <button id="stop">Stop</button>
+    <button id="finish">Finish</button>
+    <button id="delay">Delay</button>
+    <button id="queue">Queue</button>
+    <button id="dequeue">Dequeue</button>
+    <button id="clear">Clear Queue</button>
+</body>
+</html>

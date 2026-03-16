@@ -1,0 +1,13 @@
+body{
+font-family: Arial;
+}
+
+.highlight{
+background: yellow;
+font-weight: bold;
+}
+
+.dark{
+background: black;
+color: white;
+}

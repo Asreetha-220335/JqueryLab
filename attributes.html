@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Attribute Methods</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#b1").click(function(){
+            $("#link").attr("href","https://google.com");
+        });
+        $("#b2").click(function(){
+            $("#link").removeAttr("href");
+        });
+        $("#b3").click(function(){
+            $("#check").prop("checked",true);
+        });
+        $("#b4").click(function(){
+            alert($("#name").val());
+        });
+});
+</script>
+</head>
+<body>
+    <a id="link">Example Link</a><br>
+    <button id="b1">attr()</button>
+    <button id="b2">removeAttr()</button><br>
+    <input type="checkbox" id="check"> Accept<br>
+    <button id="b3">prop()</button><br>
+    <input type="text" id="name" placeholder="Enter name">
+    <button id="b4">val()</button>
+
+</body>
+</html>

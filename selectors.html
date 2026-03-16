@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Selectors</title></head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('h1').css("color","darkcyan");
+            $('asree').css("background","green");
+            $('.para').css("font-weight",'bold');
+            $('h,p').css("border","1 px solid gray");
+            $('#para2').css("text-decoration",'underline');
+            // Hierarchy selectors
+            $("div p").css("color","green");             
+            $("div > span").css("background","pink");    
+            $("#para1 + span").css("color","purple");    
+            $("#para1 ~ span").css("font-size","18px");
+            // Filter selectors
+            $("li:first").css("color","red");
+            $("li:last").css("color","blue");
+            $("li:eq(2)").css("background","lightgreen");
+            $("li:even").css("font-weight","bold");
+            $("li:odd").css("font-style","italic");
+            $("li:not(:first)").css("font-size","30px");
+            // Attribute selector
+            $("[name]").css("border","2px solid red");
+            $("[type=text]").css("background","lightyellow");
+            $("[href^=https]").css("color","green");     // starts with https
+            $("[href$=html]").css("color","orange");     // ends with html
+            $("[href*=google]").css("font-weight","bold"); // contains google
+        })
+    </script>
+<body>
+    <!-- Basic selector -->
+    <h1>Basic Selector</h1>
+    <h>RGUKT</h>
+    <asree>It a not a bulit in tag</asree>
+    <p class="para">Hello the people of Rgukt</p>
+    <p id="para2">This is paragraph 2</p>
+
+    <!-- Hierarchy Selectors -->
+     <h2>Hirerarchy selectors</h2>
+     <div>
+        <p>Paragraph inside div</p>
+        <span>Span inside div</span>
+    </div>
+    <p id="para1">Paragraph</p>
+    <span>Sibling Span 1</span>
+    <span>Sibling Span 2</span>
+    <!-- Filter Selectors  -->
+    <h2>Filter Selectors</h2>
+    <ul>
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Orange</li>
+        <li>Banana</li>
+        <li>Grapes</li>
+    </ul>
+    <!-- Attribute selector -->
+    <h2>Attribute Selectors</h2>
+    <input type="text" name="username" placeholder="Username"><br><br>
+    <input type="password" name="password" placeholder="Password"><br><br>
+    <a href="https://google.com">Google Link</a><br>
+    <a href="contact.html">Contact Page</a>
+
+</body>
+</html>

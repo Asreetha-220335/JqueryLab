@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Effects</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+    #box{
+    width:100px;
+    height:100px;
+    background:blue;
+    color:white;
+    text-align:center;
+    line-height:100px;
+    margin:20px;
+    position:relative;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+    // Basic Effects
+    $("#show").click(function(){
+        $("#box").show();
+    });
+    $("#hide").click(function(){
+        $("#box").hide();
+    });
+    $("#toggle").click(function(){
+        $("#box").toggle();
+    });
+    // Fade Effects
+    $("#fadeIn").click(function(){
+        $("#box").fadeIn();
+    });
+    $("#fadeOut").click(function(){
+        $("#box").fadeOut();
+    });
+    $("#fadeToggle").click(function(){
+        $("#box").fadeToggle();
+    });
+    $("#fadeTo").click(function(){
+        $("#box").fadeTo(1000,0.3);
+    });
+    // Sliding Effects
+    $("#slideDown").click(function(){
+        $("#panel").slideDown();
+    });
+    $("#slideUp").click(function(){
+        $("#panel").slideUp();
+    });
+    $("#slideToggle").click(function(){
+        $("#panel").slideToggle();
+    });
+    // Animation
+    $("#animate").click(function(){
+        $("#box").animate({
+        left:'200px',
+        opacity:'0.5',
+        height:'150px',
+        width:'150px'
+        });
+    });
+
+});
+</script>
+</head>
+<body>
+    <h2>Basic Effects</h2>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+    <button id="toggle">Toggle</button>
+    <h2>Fade Effects</h2>
+    <button id="fadeIn">Fade In</button>
+    <button id="fadeOut">Fade Out</button>
+    <button id="fadeToggle">Fade Toggle</button>
+    <button id="fadeTo">Fade To</button>
+    <h2>Sliding Effects</h2>
+    <button id="slideDown">Slide Down</button>
+    <button id="slideUp">Slide Up</button>
+    <button id="slideToggle">Slide Toggle</button>
+    <div id="panel" style="display:none;background:lightgray;padding:20px;margin:10px;">
+    Sliding Panel Content
+    </div>
+    <h2>Custom Animation</h2>
+    <button id="animate">Animate Box</button>
+    <div id="box">BOX</div>
+</body>
+</html>
